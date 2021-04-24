@@ -1,0 +1,315 @@
+
+$
+//////////////////////////////////////////////// OOP PHP /////////////////////////////////////////////////////////
+
+PERTEMUAN 2
+Class dan Objek
+CLASS
+-blueprint/template untuk membuat intance dari object
+-class mendefinisikan objek
+-menyimpan data dan prilaku yang disebut dengan property dan method
+
+MEMBUAT CLASS
+.diawali dgn menulis keyword class, diikuti nama dan diatasi dgn {} untuk menyimpan propety dan method . contoh : class{}
+.aturan penamaan class sama seperti variabel
+<?php 
+	class Coba{
+	public $a;  //property
+	//method
+	public function b(){
+}
+}
+?>
+
+
+OBJECT
+-instance yang didefinisikan oleh class
+-banyak object dapat dibuat dgn menggunkan satu class
+-object dibuat dgn menggunakan keyword new
+Contoh 
+<?php 
+	class Coba{
+
+
+
+}
+	// membuat object instance dari class
+	$a = new Coba();
+	$b = new Coba();
+
+?>
+//instal xdebug 
+
+
+
+PERTEMUAN 3
+PROPERTY DAN METHOD
+PROPERTY 
+	.mempresentasikan data / keadaan dari sebuah object
+	.Variabel yang ada dalam object (member variabel)
+	.Sama seperti variabel didalam PHP, ditambah dengan visibility di depannya
+	visibility ada 3
+		.public
+		.privet
+		.vrotetix
+METHOD 
+	.mempresentasikan perilaku dari sebuah object
+	.function yang ada di dalam object
+	.sama seperti function di dalam php, ditambah dengan visibility di depannya
+
+
+
+
+PERTEMUAN 4
+Constructor / Konstruktor
+
+
+
+PERTEMUAN 5
+OBJECT Type 
+type data : 
+	.primitif 
+		.integer
+		.string
+		.boolean
+	.Array
+
+
+
+PERTEMUAN 6
+Inheritance (pewarisan) bagian 1
+	.menciptakan hirerarki antar kelas (Parent & Child)
+	.Child Clzss, mewarisi semua propery dan method dari parent-nya (yang visible)
+	.Child class, memperluas (extands) fungsionalitas dari parent-nya
+
+
+
+PERTEMUAN 7
+Inheritance (seluction) bagian 2
+
+
+
+PERTEMUAN 8
+konsep OVERRIDING (mengambil / menipah)
+
+
+PERTEMUAN 9
+visibility (Access Modifier)
+	.konsep yg digunka utk mengatur akses dari property dan method pada sebuah object
+	.ada 3 keyword visibilty : 
+							.public, 
+							.protected dan 
+							.private
+public, dapat digunakan di mana saja, bahkan di luar kelas
+protected, hanya dapat digunakan di dalam sebuah kelas beserta turunannya
+private, hanya dapat digunkan di dalam sebuah kelas tertentu saja
+
+Kenapa?
+.hanya memperlihatkan aspek dari class yang dibutuhkan oleh 'client'
+.menentukan kebutuhan yang jelas dari sebuah object
+.memberikan kendali pada kode kita untuk menghindari BUG
+
+
+
+PERTEMUAN 10 
+Accessor Methods ( Setters & Getters)
+method untuk Set
+method untuk get
+Magic Method ( __set() & __get())
+
+
+PERTEMUAN 11
+Statc Keyword (untuk property dan metod kita)
+Class merupakan template dari object, kita bisa mengakses property dan method falam kontek class
+Overloading (membuat function yang sama tapi dgn parameter yang berbeda)
+untuk apa?
+static keyword 
+	.member yang terkait dengan class, bukan dengan object
+	.nilai static akan selalu tetap meskipun object di-instaniasi berulang kali
+	.membuat kode menjadi 'procedural'
+	.biasanya digunakan untuk membuat fugsi bantuan / helper
+	.atau diguakan di class-class utility pada framework
+
+
+
+PERTEMUAN 12
+Constant (sebuah identifier untuk menyimpan nilai)
+			nilai-nya tidak dapat berubah
+			.define()
+			.const (bisa disimpan didalm class)
+Magic Constant
+	.__LINE__
+	.__FILE__
+	.__DIR__
+	.__FUNCTION__
+	.__CLASS__
+	.__TRAIT__
+	.__METHOD__
+	.__NAMESPACE__
+
+
+
+
+PERTEMUAN 13
+Abstrack Class (1)
+	.sebuah kelas yang tidak dapat di-instansiasi 
+	.kelas 'abstrak'
+	.mendefinisikan interface untuk kelas lain yang mejadi turunannya
+	.berperan sebagai 'kerangka dasar' untuk kelas turunannya
+	.memiliki min 1 method abstrak
+	.digunakan dalam 'pewarisan' / inheritance untuk 'memaksakan' implementasi 
+	method abstrak yang sama utuk semua kelas turunannya
+Abstrack Class (2)
+	.semua elas turnan, harus mengimplementasikan method abstrak yang ada di kelas abstraknya
+	.kelas abstrak boleh memiliki property / method reguler
+	.kelas abstrak boleh memiliki property / static method
+Contoh Kelas Abstrak 
+	.class Mobil Extends Kendaraan
+	.class Laptop Extends Komputer
+	.class Email Extends Komunikasi
+	...
+Kenapa ?
+	.mempresentasikan ide atau konsep dasar
+	."Composition Over Inheritance"
+	.salah satu cara menerapkan Polimorphism (OOP)
+	.sentralisasi logic 
+	.mempermudah pengerjaan tim
+
+
+
+
+PERTEMUAN 14
+Abstract Class(bagian 2) 
+
+
+
+PERTEMUAN 15
+Interface (1)
+	.kelas abstrak yang sama sekali tidak memiliki implementasi
+	.murni merupan tempalte untuk turunannya 
+	.tidak boleh memiliki property, hanya deklarasi method saja
+	.semua method harus dideklarasikan dengan visibility public 
+	.boleh mendeklarasikan __construct()
+	.satu kelas boleh mengimplemntasikan banyak interface
+interface (2)
+	.dengan menggunakan type-hinting dapat melakukan 'Dependency Injection'
+	.pada akhirnya akan menyimpan Polymorphism (OOP)
+
+
+
+PERTEMUAN 16
+Autoloading (memanggil class (file) tanpa harus menggunakan require)
+	.1 class ditulis dalam 1 file
+	kenapa require?
+	kalo membuat aplikasi sederhana dan kalo bekerja sendiri
+	karena cukup merepotkan 
+	fungsi : 
+		.spl_autoload_register();
+
+
+PERTEMUAN 17 
+Namespace ( sebuah cara untuk mengklompokan program ke dalam sebuah package tersendiri)
+Encapsulation 
+why?
+	.PHP tidak mengijinkan kita untuk memiliki 2 clas dengan nama yang sama
+	.tidak masalah jika bekerja sendiri 
+	.bagamaina jika tim? akan kesulitan
+	.bagamiana jika kita menggunakan script / library dari pihak ke-tiga? kesulitan
+	Nah disini kita bisa menggunakan Namespace
+namespace App\Produk;
+new App\Produk\User();
+
+namespace Vendor\NameSpace\SubNameSpace;
+
+    $class = explode('\\', $class);
+    $class = end($class);
+
+	alias atau nama lain
+	use App\Service\User;
+
+
+
+
+
+
+
+
+
+
+	///////////// PHP THE RIGHT WAY 
+	bagamaina cara ngoding dengan benar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
